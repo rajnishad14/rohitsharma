@@ -244,6 +244,14 @@ nav .link:hover {
     padding: 20px;
     border-radius: 10px;
   }
+  .post {
+    width: 90vw;
+    background-color: white;
+    margin: 3rem auto;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
