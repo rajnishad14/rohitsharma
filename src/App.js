@@ -9,7 +9,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <LoginLogout />
+            <Layout>
+              <LoginLogout />
+            </Layout>
           </Route>
           <Route path="/about">
             <Layout>
