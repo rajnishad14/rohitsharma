@@ -31,14 +31,14 @@ function App() {
             </Layout>
           </PrivateRoute>
           <Route path="/login">
-            <Layout>
+           
               <LoginLogout />
-            </Layout>
+            
           </Route>
           <Route path="*">
-            <Layout>
+            
               <Error />
-            </Layout>
+           
           </Route>
         </Switch>
       </Router>
