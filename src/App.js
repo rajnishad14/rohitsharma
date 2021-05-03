@@ -1,31 +1,38 @@
 import { Follow, Post, About, Error, LoginLogout } from './components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import AuthWrapper from './AuthWrapper'
+import PrivateRoute from './PrivateRoute'
 import Layout from './layout/Layout'
 import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <AuthWrapper>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Layout>
-              <LoginLogout />
-            </Layout>
-          </Route>
-          <Route path="/about">
+          <PrivateRoute exact={true} path="/">
             <Layout>
               <About />
             </Layout>
-          </Route>
-          <Route path="/follow">
+          </PrivateRoute>
+          <PrivateRoute path="/about">
+            <Layout>
+              <About />
+            </Layout>
+          </PrivateRoute>
+          <PrivateRoute path="/follow">
             <Layout>
               <Follow />
             </Layout>
-          </Route>
-          <Route path="/post">
+          </PrivateRoute>
+          <PrivateRoute path="/post">
             <Layout>
               <Post />
+            </Layout>
+          </PrivateRoute>
+          <Route path="/login">
+            <Layout>
+              <LoginLogout />
             </Layout>
           </Route>
           <Route path="*">
@@ -35,7 +42,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </AuthWrapper>
   )
 }
 
